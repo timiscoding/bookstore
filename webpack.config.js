@@ -4,11 +4,11 @@ module.exports = {
   entry: './client/index.js',
   output: {
     path: path.join(__dirname, 'client'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, use: 'babel-loader' }
-    ]
-  }
+      { test: /\.jsx?$/, exclude: /node_modules/, use: 'babel-loader' },
+    ],
+  },
 };
