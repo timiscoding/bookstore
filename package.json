@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "webpack": "webpack -wd",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +23,13 @@
     "webpack": "4.6.0"
   },
   "devDependencies": {
-    "nodemon": "1.17.3"
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.2",
+    "babel-loader": "7.1.4",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-2": "6.24.1",
+    "nodemon": "1.17.3",
+    "webpack-cli": "2.0.15"
   }
 }

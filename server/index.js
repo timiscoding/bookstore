@@ -1,10 +1,10 @@
 const http = require('http');
+const fs = require('fs');
+const path = require('path');
+const express = require('express');
 
-const server = http.createServer();
+const app = express();
 
-server.on('request', (req, res) => {
-  res.write('hello');
-  res.end();
-});
+app.use(express.static('client'));
 
-server.listen(3000);
+app.listen(3000);
