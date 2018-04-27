@@ -1,7 +1,13 @@
 import React from 'react';
 
-const App = () => (
-  <h2>Hello component</h2>
-);
+class App extends React.Component {
+  state = { answer: 42 };
+
+  render() {
+    return (
+      <h2>Hello component {this.state.answer}</h2>
+    );
+  }
+}
 
 export default App;
