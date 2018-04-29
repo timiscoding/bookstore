@@ -10,8 +10,8 @@ app.use(express.static('client'));
 app.use(cors());
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
-  renderString().then((renderData) => {
+app.get(['/', '/books/:bookId'], (req, res) => {
+  renderString(req.params.bookId).then((renderData) => {
     res.render('index', {
       markup: renderData.markup,
       initialData: renderData.data,

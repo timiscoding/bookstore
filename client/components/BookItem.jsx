@@ -1,8 +1,7 @@
 import React from 'react';
 
-const Book = ({ id, title, author, price, onRatingClick, rating, onClick }) => (
+const BookItem = ({ id, title, author, price, onRatingClick, rating }) => (
   <li onClick={() => onClick(id)}>
-    <div>Book</div>
     <div>{title}</div>
     <div>{author}</div>
     <div>{price}</div>
@@ -10,4 +9,4 @@ const Book = ({ id, title, author, price, onRatingClick, rating, onClick }) => (
   </li>
 );
 
-export default Book;
+export default BookItem;

@@ -26,5 +26,14 @@ apiRouter.get('/books/:bookId/ratings', (req, res) => {
     });
 });
 
+apiRouter.get('/books/:bookId', (req, res) => {
+  pool.query('SELECT * from books WHERE id = $1', [req.params.bookId])
+    .then((qres) => {
+      res.json(qres.rows);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
 export default apiRouter;

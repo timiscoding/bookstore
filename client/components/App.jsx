@@ -1,11 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 import BookList from './BookList';
+import Book from './Book';
 
 class App extends React.Component {
   state = {
     books: this.props.initialData,
     ratings: {},
+    currentBookId: null,
   };
 
   fetchRatingForBook = (bookId) => {
@@ -28,15 +30,28 @@ class App extends React.Component {
     return ratings.reduce((sum, val) => sum + +val.rating, 0) / ratings.length;
   }
 
+  showBookPage = (bookId) => {
+    history.pushState(
+      { currentBookId: bookId },
+      "",
+      `/books/${bookId}`,
+    );
+    this.setState({ currentBookId: bookId });
+  }
+
   render() {
     return (
       <div>
-        <h2>Hello component {this.state.answer}</h2>
-        <BookList
-          books={this.state.books}
-          onBookClick={this.fetchRatingForBook}
-          calcRatingForBook={this.calcRatingForBook}
-        />
+        {
+          this.state.currentBookId
+          ? <Book {...this.state.books.find(book => book.id === this.state.currentBookId)} />
+          : <BookList
+            books={this.state.books}
+            onBookClick={this.fetchRatingForBook}
+            calcRatingForBook={this.calcRatingForBook}
+            onTitleClick={this.showBookPage}
+          />
+        }
       </div>
     );
   }
