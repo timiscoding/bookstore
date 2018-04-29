@@ -1,8 +1,10 @@
 import React from 'react';
 
-const Book = () => (
+const Book = ({ title, author, price }) => (
   <li>
-    One book
+    <div>{title}</div>
+    <div>{author}</div>
+    <div>{price}</div>
   </li>
 );
 

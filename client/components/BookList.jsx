@@ -1,11 +1,9 @@
 import React from 'react';
 import Book from './Book';
 
-const BookList = () => (
+const BookList = ({ books }) => (
   <ul>
-    <Book />
-    <Book />
-    <Book />
+    {books.map(book => <Book key={book.id} {...book} />)}
   </ul>
 );
 

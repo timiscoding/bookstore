@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/timiscoding/bookstore#readme",
   "dependencies": {
+    "axios": "0.18.0",
     "cors": "2.8.4",
     "ejs": "2.5.9",
     "express": "4.16.3",

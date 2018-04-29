@@ -2,13 +2,13 @@ import React from 'react';
 import BookList from './BookList';
 
 class App extends React.Component {
-  state = { answer: 42 };
+  state = { books: this.props.initialData };
 
   render() {
     return (
       <div>
         <h2>Hello component {this.state.answer}</h2>
-        <BookList />
+        <BookList books={this.state.books} />
       </div>
     );
   }
